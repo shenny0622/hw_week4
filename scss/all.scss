@@ -1,0 +1,14 @@
+@import "variable"; // 變數  
+@import "reset";  // reset.css 
+@import "main";  //放相同樣式的class 例如:title樣式 
+@import "mixin"; //斷點＋一些常用語法 下個專案可延用此隻檔案
+@import "layout"; // 共同框架,可放header和footer的class
+@import "pages/index"; 
+@import "pages/faq"; 
+
+//ask!為什麼 variable和mixin 不會整合至all.min.css
+
+
+
+
+

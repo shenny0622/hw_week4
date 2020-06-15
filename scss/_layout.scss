@@ -1,0 +1,296 @@
+/* header start */
+.header{
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 88px;
+	background-color: #AA0601;
+	color: #fff;
+}
+
+/*.menu{
+	display: flex;
+}
+*/
+.menu a{
+	display: block;
+	text-decoration: none;
+	margin-right: 64px;	
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
+	// padding: 20px 20px 10px 20px;
+	/* text-align: center; --可以不用寫*/
+}
+
+.menu li:last-child a{ /*為什麼不能寫.menu li a:last-child */
+	margin-right: 0px;	
+}
+
+.menu a:hover {
+	border-bottom: 2px solid white;
+  }
+
+
+.ham-icon {
+	position: absolute;
+	left: 13px;
+	display: none;
+
+}
+
+@media(max-width: 992px){ /*992就直接變手機版了 */
+	.header{
+		position: relative;
+    	padding: 13px 0;
+		justify-content: center;
+    	align-items: center;
+	}
+
+	.header img:last-child{
+		width: 48px;
+	}
+
+	/* .header a img{
+		width: 24px;
+	} */
+
+	/*有點不太懂手機版的漢堡選單？*/
+	.menu {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		max-height: 0px;
+		transition: all 0.8s; /*有點不懂*/
+		overflow: hidden;
+		z-index: 120;
+	  }
+	  .menu.active {
+		max-height: 252px; /*為什麼是252px? */
+	  }
+	  .menu li a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		background: #AA0601;
+		color: #FFFFFF;
+		border-top: 1px solid #FFFFFF;
+		padding: 16px 0;
+		text-decoration: none;
+	  }
+
+	  /* ask! 手機版hover效果如何寫？ ㄧ定要用js語法寫嗎？ */
+	  .menu li a:active {
+		background: #8f0400;
+	  }
+	  
+	  .ham-icon {
+		display: block;
+	  }
+}
+/* header end */
+
+/* footer start */
+.footer{
+	background-color: #AA0601;
+	color: #fff;
+	padding: 36px 0 40px 0;
+}
+
+.footer .container{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.footerInfo{
+	margin-bottom: 24px;
+	justify-content: space-between;
+}
+.footerInfo .menu{
+	margin-bottom: 32px;
+}
+
+.footerInfo .menu a {
+	text-decoration: none;
+	margin-right: 48px;	
+	color: #fff;
+	font-size: 16px; /*預設字級為16px 可以不用寫 */
+	line-height: 24px;
+}
+
+.footerInfo li:last-child a{
+	margin-right: 0px;	
+}
+
+.footerInfo .contactList a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 36px; 
+	line-height: 54px;
+}
+
+.footerInfo .contactList a:first-child{
+	margin-bottom: 16px;
+}
+
+.ml-phone{
+	margin-left: 23px;
+}
+
+.ml-email{
+	margin-left: 12px;
+}
+
+.contactDetails{
+	align-items: center;
+}
+
+.socilaMedium{
+	width: 208px;  /* ask 這裡要下寬度 故要下maxwidth?*/
+	justify-content: space-between;
+	/*margin-right: 48px;  ask 為什麼socilaMedium 沒有在container裡面的寬度？ */
+}
+
+.copyright{
+	border-top: 1px solid #fff;
+	text-align: center;
+	/* width: 1150px; */
+}
+.copyrightList{
+	justify-content: space-between;
+	margin-top: 24px;
+}
+
+.copyrightDetails{
+	align-items: center;
+}
+.copyrightDetails a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px; 
+	line-height: 21px;
+}
+
+.copyrightDetails a:first-child{
+	margin-right: 62px;
+}
+
+.copyrightDetails p{
+	font-size: 16px; 
+	line-height: 24px;
+	margin-left: 38px;
+}
+
+@media (max-width: 992px) {
+	.footer img {
+	  width: 24px;
+	  height: 24px;
+	}
+	.copyrightDetails img{
+	  display: none;
+	}
+	.footer .container{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.footerInfo{
+		margin-bottom: 27px;
+		
+	}
+	.footerInfo .menu{
+		margin-bottom: 24px;
+		display: none;
+	}
+	
+	.footerInfo .contactList a{
+		font-size: 20px; 
+		line-height: 30px;
+	}
+	/* 不是很好的寫法 */
+	.ml-phone{
+		margin-left: 12px;
+	}
+	
+	.ml-email{
+		margin-left: 8px;
+	}
+	
+	.socilaMedium{
+		width: 120px; /* 不是很好的寫法 ask */
+		justify-content: space-between;
+	}
+	/* .copyright{
+		width: 672px;
+	} */
+	
+	.copyrightDetails a:first-child{
+		margin-right: 24px;
+	}
+	
+	.copyrightDetails p{
+		margin-left: 0px;
+	}
+}
+
+@media (max-width: 767px) {
+	.footer {
+	  padding: 24px 0 24px 0;
+	}
+
+	.footerInfo{
+		margin-bottom: 24px;
+	}
+
+	.footerInfo .contactList a{
+		font-size: 16px; 
+		line-height: 30px;
+	}
+
+	.footerInfo .contactList img {
+		width: 13px;
+		height: 13px;
+	  }
+	
+	.footerInfo .contactList a:first-child{
+		margin-bottom: 8px;
+	}
+	
+	.ml-phone{
+		margin-left: 8px;
+	}
+	
+	.ml-email{
+		margin-left: 5px;
+	}
+	
+	/* .copyright{
+		width: 351px;
+	} */
+
+	.copyrightList {
+		flex-direction: column;
+		background-image: url("../images/logo.png");
+		background-position: right bottom;
+		background-repeat: no-repeat;
+		background-size: 46px 27px;
+	  }
+	.copyrightDetails{
+		flex-direction:column;
+		align-items: flex-start;
+		margin-top: 16px;
+	}
+	
+	.copyrightDetails a:first-child{
+		margin-bottom: 8px;
+	}
+	
+	.copyrightDetails p{
+		font-size: 14px; 
+		line-height: 21px;
+		margin-left: 0px;
+	}
+}
+
+/* footer end */

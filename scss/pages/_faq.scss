@@ -1,0 +1,218 @@
+/*.faqBanner{
+	// position: relative;
+    height: 304px;
+	background-image: url(../../images/qa.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; /*使背景圖放大至滿版，此可以不加這語法嗎？*/
+/*	@include pad{
+		background-image: url(../../images/72@2x.png);
+		background-position: 32%;
+	}
+	@include mobile{
+        height: 143px;
+	}
+
+	h2{
+		font-size: 64px;
+		line-height: 80px;
+		font-weight: bold;
+		margin-right: 10px;
+
+		@include pad{
+			font-size: 48px;
+			margin-right: 16px;
+		}
+		@include mobile{
+			font-size: 28px;
+			margin-right: 8px;
+		}
+	}
+	img{
+		@include pad{
+			width: 48px;
+		}
+		@include mobile{
+			width: 24px;
+		}
+	}
+	.faqTitle{
+		position: absolute;
+		bottom: 0;
+		// 好像可以不用寫left 因為沒作用
+		left: 0; 
+		@include mobile{
+			bottom: -20px;
+		}
+	}
+
+	.container{
+	// 	// align-items: flex-end; --為什麼問號icon跟文字沒有對齊？
+	   	height: 100%;
+	 	position: relative;
+	 }
+}
+*/
+
+.faqBanner{
+    height: 304px;
+	background-image: url(../../images/72.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; /*使背景圖放大至滿版，此可以不加這語法嗎？*/
+	@include pad{
+		background-image: url(../../images/72-768.png);
+		background-position: center bottom;
+	}
+	@include mobile{
+		background-image: url(../../images/72-768.png);
+		height: 143px;
+		background-position: center 80%;
+	}
+
+	h2{
+		font-size: 64px;
+		line-height: 80px;
+		font-weight: bold;
+		//設計稿好像沒有mb值
+		//好像可用mb ml負值 調整文字位置
+		margin-bottom: 3px;
+
+		@include pad{
+			font-size: 48px;
+			margin-bottom: -3px;
+			// margin-left: -40px;
+		}
+		@include mobile{
+			font-size: 28px;
+			margin-bottom: -20px;
+			// margin-left: -5px;
+		}
+	}
+	img{
+		margin-left: 10px;
+
+		@include pad{
+			width: 48px;
+			height: 48px;
+			margin-left: 16px;
+			align-self: center;
+			//內元件交錯軸的對齊設定
+		}
+		@include mobile{
+			width: 24px;
+			height: 24px;
+			margin-left: 8px;
+		}
+	}
+
+	.h-100 {
+		height: 100%;
+	}
+
+	.faqSlogan{
+		justify-content: flex-start;
+		align-items: flex-end;
+	}
+}
+
+.faq-content{
+	padding-top: 88px;
+	padding-bottom: 156px;
+	@include pad{
+		padding-top: 40px;
+		padding-bottom: 104px;
+	}
+	@include mobile{
+		padding-top: 24px;
+        padding-bottom: 56px;
+	
+	}
+}
+
+.faq-title {
+    margin-bottom: 16px;
+    font-weight: bold;
+	font-size: 32px;
+	line-height: 63px;
+	@include pad{
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+    @include mobile{
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+}
+.question{
+	h3 {
+    padding: 22px 38px;
+    border: 1px solid #000000;
+    border-bottom: 0;
+    font-weight: bold;
+	font-size: 20px;
+	line-height: 23px;
+	// 滑鼠指標顯示為手指 增加使用者體驗 代表此為連結
+	cursor: pointer;	
+	}
+	p{  
+		font-size: 16px;
+		line-height: 24px;
+		padding: 22px 38px;
+		background: #F2F2F2;
+        /*background: #F2F2F2 0% 0% no-repeat padding-box;有點看不太懂 */
+        border: 1px solid #000000;
+        border-bottom: 0;
+        display: none;
+	}
+	li:nth-child(5){
+        border-bottom: 1px solid #000;
+	}
+	
+	@include pad{			
+        h3{
+			font-size: 14px;
+			line-height: 21px;
+			font-size: 16px;
+			line-height: 24px;
+            padding: 16px 24px;
+        }
+        p{
+            font-size: 14px;
+            padding: 16px 24px;
+        }
+    }
+    @include mobile{
+        h3{
+            padding: 16px;
+        }
+        p{
+            padding: 16px;
+        } 
+	}
+	
+	.up{
+        margin-left: auto;
+        display: none;
+    }
+    
+    .down{
+        margin-left: auto;
+    }
+    h3:hover{
+        background-color: $primary;
+        color: $white;
+    }
+    h3.active{
+        background-color: $primary;
+        color: $white;
+        .up{
+            display: block;
+        }
+        .down{
+            display: none;
+        }
+    }
+}
+
+

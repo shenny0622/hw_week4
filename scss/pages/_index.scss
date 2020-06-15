@@ -1,0 +1,715 @@
+/* banner */
+.banner{
+	height: 840px;
+	background-image: url(../images/banner.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; /*使背景圖放大至滿版，此可以不加這語法嗎？*/
+	color: #650300;
+}
+
+.bannerText p{
+	font-size: 36px;
+	line-height: 54px;
+}
+
+.bannerText h1{
+	font-size: 64px;
+	line-height: 96px;
+	font-weight: bold;
+}
+
+.bannerText{
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	height: 100%; /*為何要下高度 jcc才會有作用？ */
+
+}
+/* .card{
+	flex-wrap: wrap;
+} */
+
+@media (max-width: 992px) {
+	.bannerText p{
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.bannerText h1 {
+	  font-size: 48px;
+	  line-height: 72px;
+	}
+}
+
+@media (max-width: 767px) {
+	.banner {
+		background-image: url(../images/banner-sm.png);
+		height: 394px;
+	}
+	.bannerText p{
+		font-size: 16px;
+	}
+	.bannerText h1 {	  
+	font-size: 32px;
+	}
+} 
+
+/* profession */
+.bg-light{
+    background-color: #AA06010D;
+}
+
+.card-inside img{
+	/*height: 100px; 
+	 因icon圖片高度不等，要寫maxheight還是height？ */
+	margin-bottom: 40px;
+	margin-top: 16px;
+}
+
+/* 有點不太懂 */
+.card{
+	/* maxwidth: 1200px; */
+	/* justify-content: space-between; */
+	/* align-items: center; */
+	align-items: baseline; /*對齊水平物件 但若img調整寬度100px 故其實可以不用下這個語法*/
+	padding-bottom: 80px;
+	/* flex-wrap: wrap; 	為何不能先下在這 會斷行 */
+}
+
+.card-inside{
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 24px;
+}
+
+.card h3{
+	font-size: 24px;
+	line-height: 36px;
+	color: #650300;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+.card p{
+	font-size: 16px;
+	line-height: 24px;
+	color:#000;
+}
+
+@media (max-width: 992px) {
+	.card{
+		flex-wrap: wrap;
+		padding-bottom: 68px;
+	}
+	.card-inside {
+	  width: 46%; /*為什麼是46% ?*/
+	  margin-bottom: 12px;
+	}
+	.card-inside img{
+		margin-bottom: 16px;
+		margin-top: 20px;
+	}
+	.order-1{
+		order:3;
+	}
+	.order-2{
+		order:1;
+	}
+	.order-3{
+		order:2;
+	}
+	.order-4{
+		order:4;
+	}
+
+	.card h3{
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.card{
+		padding-bottom: 48px;
+	}
+	.card-inside img{
+		margin-bottom: 16px;
+		margin-top: 20px;
+	}
+	.card-inside{
+	  width: 100%;
+	  margin-bottom: 8px;
+	}
+  }
+
+/* classic */
+.classic{
+	padding-bottom: 80px;
+}
+
+.product-list li{
+	display: flex;
+	margin-bottom: 32px;
+}
+
+.product-list li:last-child {
+	margin-bottom: 0px;
+}
+
+ /*不太理解？  */
+.product-list img, .p-img {
+	width: 50%;
+  }
+.product-list li:nth-child(2) img {
+	width: 100%;  /*不太理解？  */
+}
+
+.product-list .content{
+	font-size: 48px;
+	line-height: 72px;
+    color: #AA0601;
+    text-transform: uppercase; /*全部英文皆為大寫 */
+    display: flex;
+    align-items: center;
+    font-style: italic; /*斜體 */
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.product-list li:nth-child(2) .content {
+    margin-right: 24px;
+}
+
+/* ask 因為有設定圖片比例 故要如何像設計稿 做到圖片排別的方式？ */
+.product-list li:nth-child(2) {
+	justify-content:space-between ;
+	/* flex-direction: row-reverse; */
+}
+
+.content h2{
+	margin-left: 8px;
+}
+
+.p-img {
+    position: relative;
+}
+
+.p-img::before {
+    content: '';
+    background: url(../images/product-2-color.png) no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; /* 透明度*/
+    background-size: contain;
+}
+
+.p-img:hover::before{
+	opacity: 1;  /* 平板、手機沒有hover 要怎麼設定 or 取消？*/
+}
+
+@media (max-width: 992px) {
+	.classic{
+		padding-bottom: 40px;
+	}
+	.product-list li {
+	  margin-bottom: 8px;
+	}
+	
+	.product-list .content{
+		font-size: 28px;
+		line-height: 42px;
+		/* width: 45%; */
+		justify-content: center;
+		/* ask! 如何讓icon h2 文字置中？ jcc沒吃到是因為沒有給寬度嗎？ */	
+	}
+	.product-list li:nth-child(2) {
+	  flex-direction: row-reverse;
+	  justify-content: flex-end;
+	}
+	.product-list li:nth-child(2) .content  {
+	  margin-right: 0;
+	}
+  }
+ 
+  @media (max-width: 767px) {
+	.classic{
+		padding-bottom: 24px;
+	}
+ /* 重要start */	
+	.product-list li {
+	  position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	.product-list .content {
+	  color: white;
+	  position: absolute;
+	  margin-left: 0;
+	  z-index: 1; /* 有點不太懂 */
+	}
+	.product-list .content img {
+	  filter: brightness(500);
+	  /* 讓icon變白色 */
+	}
+	.product-list img, .p-img {
+	  width: 100%;
+	}
+	.product-list li:nth-child(2) {
+	  justify-content: center;
+	}
+	/* ask! 為什麼li(2)不會直接吃到product-list li 的平板設定？ */
+  }
+ /* 重要end */  
+
+ /* jointDesign */
+
+.jointDesign{
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; 
+	padding-bottom: 479px;
+}
+.jointDesign-list-item{
+	justify-content: center;
+	/* 網頁有點看不太出來效果 */
+}
+
+.mr-8{
+	margin-right: 8px;
+}
+.mb-8{
+	margin-bottom: 8px;
+}
+
+@media (max-width:992px){
+	.mr-8{
+		margin-right: 3px;
+	}
+	.mb-8{
+		margin-bottom: 3px;
+	}
+}
+@media (max-width:767px){
+	.mr-8{
+		margin-right: 2px;
+	}
+	.mb-8{
+		margin-bottom: 2px;
+	}
+}
+.jointDesign-list li:first-child{
+	margin-bottom: 60px;
+}
+
+/* more動畫效果-難 start  */
+.more{
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.jointDesign-list-item-brand {
+	position: relative;
+}
+
+.jointDesign-list span {
+	font-size: 72px;
+	color: #AA0601;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap; /* 文字保持不換行語法 */
+}
+
+.more-img {
+  position: relative;
+  height: 100%; /* 不太懂 */
+  display: flex;
+  max-width: 30%; /* 不太懂 */
+  transition: all .65s .3s;
+  transform: translateX(0px);
+  margin-right: 80px;
+}
+
+.more-img::before {
+  content: "";
+  position: absolute;
+  background: white;
+  top: 8%;
+  bottom: 8%;
+  left: 10%;
+  right: -80px;
+  /* right: -85px; --跟助教下相同的距離 可是我的會出現x軸*/
+
+  /* top: 15%;
+  bottom: 15%;
+  left: 10%;
+  right: -85px; */
+}
+
+.more-img span {
+  padding: 5px 0 5px 32px;
+}
+
+.more span::before {
+  content: 'MORE';
+  position: absolute;
+  transition: all .65s .3s;
+  transform: translateY(0px);
+}
+
+.more span:hover::before {
+  transform: translateY(-85px);
+  opacity: .7;
+}
+
+.more span::after {
+  content: 'MORE';
+  position: absolute;
+  transition: all .65s .3s;
+  transform: translateY(0px);
+}
+
+.more span:hover::after {
+  transform: translateY(-145px);
+  opacity: .4;
+}
+
+.more-img:hover img:last-child {
+  transform: translateX(15px);
+}
+/* more動畫效果-難 end  */
+
+.jointDesign-list-item-brand:first-of-type {
+	margin-right: 30px;
+}
+
+/* 寫法2
+.jointDesign-list-item div:first-of-type {
+	margin-right: 30px;
+} */
+
+.jointDesign-list-item-brand::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255, 255, 255, 0.5); /* 0.5是透明度  */
+}
+
+@media (max-width: 992px) {
+
+	.more-img {
+		/* margin-right: 49px; */
+		margin-right: 80px;
+	}
+	.more-img::after {
+		/* right: -49px; */
+		right: -80px;
+	}
+
+	.jointDesign {
+	  padding-bottom: 417px;
+	}
+	.jointDesign-list li:first-child {
+	  margin-bottom: 40px;
+	}
+	/*平板有在container裡面了*/
+	.jointDesign-list { 
+	  max-width: 672px;
+	  margin: 0 auto;
+	}
+	/*double a 那兩塊字*/
+	.jointDesign-list span {
+	  font-size: 32px;
+	}
+	/*紅色more字級*/
+	.jointDesign-list span:first-of-type {
+	  font-size: 40px;
+	  align-items: center;
+	}
+	/* ask 寫法*/
+	.jointDesign-list-item-brand:first-of-type {
+	  margin-right: 24px;
+	}  
+}
+/* ask!在平板中more的箭頭失真？ 排列方有變該如何調整？ */
+@media (max-width: 767px) {
+	.more {
+		align-items: flex-start;
+	}
+	.more-img {
+		margin-right: 0;
+	}
+	.more-img::after {
+		right: 0;
+	}
+
+  .jointDesign{
+    padding-bottom: 189px;
+  }
+  .jointDesign-list li:first-child {
+    margin-bottom: 20px;
+  }
+  .jointDesign-list {
+    max-width: 352px;
+    margin: 0 auto;
+  }
+  .jointDesign-list span:first-of-type {
+    font-size: 26px;
+  }
+  .jointDesign-list-item-brand:first-of-type {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .jointDesign-list li:last-child {
+	flex-direction: column;
+	align-items: center;
+  }
+}
+
+/* recommend */
+
+.recommend {
+	/* margin-top: 306px; */
+	margin-top: -320px;
+	/*margin-top: -335px; /*268+67*/
+	/* margin-top: -398px;  -助教怎麼算的？*/
+	/* margin-top: -398px; */
+	margin-bottom: 80px;
+}
+
+/* .rec-list{
+	align-items: center;
+} */
+
+.rec-list li {
+	width: 25%;
+	margin-right: 24px;
+	background-color: white; /*還是要下顏色 不然會被其他背景色吃掉*/
+}
+
+.rec-list li:last-child{
+	margin-right: 0;
+}
+
+/* .rec-list img {
+	margin-bottom: 16px;
+} */
+/* .rec-list-header img{
+	width: 322px;
+} */
+.rec-list-body {
+	border: 1px solid #DEE2E6;
+	border-top: none;
+	/* margin-top: -1rem; */
+}
+
+.rec-list .rec-list-body {
+	padding: 16px;
+}
+
+.rec-list-body h4 {
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+  
+.rec-list-body p {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 16px;
+}
+  
+.rec-list-body h5 {
+	font-size: 16px;
+	line-height: 21px;
+	color: #707070;
+}
+
+@media (max-width: 992px) {
+	.recommend {
+		/*margin-top:-377px; 332+45 */
+		margin-top: -370px;
+		margin-bottom: 40px;
+		 /* margin-top: -416px; */
+	}
+	.rec-list {
+	  flex-wrap: wrap;
+	  /* justify-content: center;
+	  align-items: center; */
+	}
+	.rec-list li {
+	  width: 48%;
+	  margin-bottom: 24px;
+	
+	}
+	.rec-list li:nth-child(2){
+		margin-right: 0;
+		/* 要如何對齊上方brand img？ */
+	}	
+}
+  
+@media (max-width: 767px) {
+	.recommend {
+	  margin-top: -180px;
+	  margin-bottom: 24px;
+	  /* margin-top: -189px; */
+	}
+	.rec-list li {
+	  width: 100%;
+	  margin-right: 0;
+	  margin-bottom: 16px;
+	}
+	/* 不太懂 */
+	.rec-list img {
+	  width: 100%;
+	  height: 256px;
+	  object-fit: cover;
+	}
+}
+
+/* contact */
+
+.contact{
+	padding-bottom: 92px;
+}
+.contact .container{
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-inner {
+	/* max-width: 792px; -ask!為什麼不是這樣寫？ 下了在375就會有點跑掉*/
+	width: 80%; /*下80%的話 感覺表格在375時 表格有點不對稱.. */
+	
+}
+
+/* ask!為什麼是first? 而且為什麼checkbox p也吃得到樣式？ */
+/* .contact-inner p:first-of-type {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom:20px;
+} */
+.contact-inner p {
+	font-size: 20px;
+	line-height: 30px;
+	margin-bottom:20px;
+  }
+
+.contact-form-group {
+  margin-bottom: 16px;
+}
+
+.contact-form-group input, .contact-form-group textarea {
+  display: block;
+  width: 100%;
+  background-color: transparent; /*透明*/
+  border: 1px solid #000000;
+  padding: 16px;
+  /* outline:#FA8000 dashed 5px; */
+  outline: 0; /*可以不用下？*/
+}
+
+.contact-form div:nth-last-child(2){
+	/* align-items: center; */
+	align-items: baseline;
+}
+.contact-form-group input[type=checkbox] {
+  width: auto;
+  margin-right: 4px;
+}
+
+/* 看不太懂？ 這是算偽元素的語法嗎？*/
+.contact-form-group input::placeholder, .contact-form-group textarea::placeholder {
+  color: black;
+  opacity: .2;
+}
+
+.contact-form .btn {
+  background-color: #AA0601;
+  color: white;
+  width: 180px;
+  padding: 16px 0;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact-form div:last-child a{
+	text-decoration: none;
+}
+/*  寫法2(取消a連結下底線)
+a.btn{
+	text-decoration: none;
+} */
+
+.contact-form div:last-child{
+	justify-content: center;
+}
+.contact-form .btn:hover {
+  background-color: #650300;
+}
+
+/* label是display-inline 故要先調整為block才能吃到mb距離 */
+.contact label {
+    display: block;
+    margin-bottom: 4px;
+}
+.contact-form-group p{
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 42px;
+}
+
+@media (max-width: 992px) {
+	.contact{
+		padding-bottom: 56px;
+	}
+	.contact-inner p{
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 16px;
+	}
+
+	.contact-form-group {
+		margin-bottom: 12px;
+	}
+	
+	.contact-form-group p{
+		margin-bottom: 24px;
+	}
+}
+@media(max-width: 767px) {
+	.contact{
+		padding-bottom: 48px;
+	}
+	.contact-inner p {
+		margin-bottom: 8px;
+	}
+	.contact-form-group input, .contact-form-group textarea {
+	  padding: 7px 12px;
+	}
+
+	.contact label {
+		margin-bottom: 2px;
+	}
+
+	.contact-form-group p{
+		font-size: 14px;
+		line-height: 21px;
+		margin-bottom: 20px;
+	}
+}
