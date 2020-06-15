@@ -1349,7 +1349,7 @@ a.btn{
 */
 .faqBanner {
   height: 304px;
-  background-image: url(../../images/72.png);
+  background-image: url(../images/72.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1358,14 +1358,14 @@ a.btn{
 
 @media (max-width: 992px) {
   .faqBanner {
-    background-image: url(../../images/72-768.png);
+    background-image: url(../images/72-768.png);
     background-position: center bottom;
   }
 }
 
 @media (max-width: 767px) {
   .faqBanner {
-    background-image: url(../../images/72-768.png);
+    background-image: url(../images/72-768.png);
     height: 143px;
     background-position: center 80%;
   }
