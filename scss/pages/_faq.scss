@@ -56,16 +56,16 @@
 
 .faqBanner{
     height: 304px;
-	background-image: url(../../images/72.png);
+	background-image: url(../images/72.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover; /*使背景圖放大至滿版，此可以不加這語法嗎？*/
 	@include pad{
-		background-image: url(../../images/72-768.png);
+		background-image: url(../images/72-768.png);
 		background-position: center bottom;
 	}
 	@include mobile{
-		background-image: url(../../images/72-768.png);
+		background-image: url(../images/72-768.png);
 		height: 143px;
 		background-position: center 80%;
 	}
